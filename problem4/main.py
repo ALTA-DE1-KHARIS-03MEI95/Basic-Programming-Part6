@@ -1,5 +1,11 @@
 def find_max_sum_sub_array(k, arr):
-    return 0
+
+    maks_sum = 0
+    jumlah = 0
+    for i in range(len(arr) - k + 1):
+        jumlah = sum(arr[i:i+k])
+        maks_sum = max(maks_sum, jumlah)
+    return maks_sum
 
 if __name__ == '__main__':
     print(find_max_sum_sub_array(3, [2, 1, 5, 1, 3, 2])) # 9
